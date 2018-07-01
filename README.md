@@ -1,4 +1,4 @@
-## Node.js OAuth example
+## Go OAuth example
 
 Read the blog post [here](https://www.sohamkamani.com/blog/golang/2018-06-24-oauth-with-golang/)
 
