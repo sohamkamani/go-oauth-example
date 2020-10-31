@@ -18,7 +18,7 @@
 	const token = query.split('access_token=')[1]
 
 	// Call the user info API using the fetch browser library
-	fetch('//api.github.com/user', {
+	fetch('https://api.github.com/user', {
 			headers: {
 				// Include the token in the Authorization header
 				Authorization: 'token ' + token
