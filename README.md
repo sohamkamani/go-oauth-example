@@ -1,6 +1,6 @@
-## Go OAuth example
+## Go OAuth Example
 
-Read the blog post [here](https://www.sohamkamani.com/blog/golang/2018-06-24-oauth-with-golang/)
+Read the blog post [here](https://www.sohamkamani.com/golang/oauth)
 
 This is an example node application that implements Githubs OAuth2 API.
 
