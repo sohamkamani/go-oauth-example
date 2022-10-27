@@ -24,6 +24,7 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stdout, "could not parse query: %v", err)
 			w.WriteHeader(http.StatusBadRequest)
+			return
 		}
 		code := r.FormValue("code")
 
@@ -34,6 +35,7 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stdout, "could not create HTTP request: %v", err)
 			w.WriteHeader(http.StatusBadRequest)
+			return
 		}
 		// We set this header since we want the response
 		// as JSON
@@ -44,6 +46,7 @@ func main() {
 		if err != nil {
 			fmt.Fprintf(os.Stdout, "could not send HTTP request: %v", err)
 			w.WriteHeader(http.StatusInternalServerError)
+			return
 		}
 		defer res.Body.Close()
 
@@ -52,6 +55,7 @@ func main() {
 		if err := json.NewDecoder(res.Body).Decode(&t); err != nil {
 			fmt.Fprintf(os.Stdout, "could not parse JSON response: %v", err)
 			w.WriteHeader(http.StatusBadRequest)
+			return
 		}
 
 		// Finally, send a response to redirect the user to the "welcome" page
